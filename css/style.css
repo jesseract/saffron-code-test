@@ -1,0 +1,17 @@
+.title {
+  font: 12px arial, helvetica, clean, sans-serif;
+  font-weight: bold;
+}
+
+.body {
+  font: 12px arial, helvetica, clean, sans-serif;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.userId {
+  font: 10px arial, helvetica, clean, sans-serif;
+  font-style: italic;
+  text-transform: lowercase;
+  text-align: right
+}
