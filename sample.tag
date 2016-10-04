@@ -1,7 +1,7 @@
 <sample>
   <h3>Users</h3>
   <ul>
-    <li each={ opts.userList }><button onclick="showUserProfile('{id}')">{ email }</button></li>
+    <li each={ opts.userList }><a href="" onclick="showUserProfile('{id}')">{ username }</a></li>
   </ul>
 
   <script>
