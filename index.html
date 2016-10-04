@@ -4,7 +4,9 @@
   </head>
   <body>
     <sample></sample>
+    <userPostsAndComments></userPostsAndComments>
     <script type="riot/tag" src="sample.tag"></script>
+    <script type="riot/tag" src="userPostsAndComments.tag"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
     <script src="./index.js"></script>
@@ -14,9 +16,9 @@
       });
 
       function showUserProfile(userId) {
-        alert(userId);
-        // instead we would make another riot tag and mount that, and pass it the userId and load the posts and comments etc.
-        riot.mount('sample', {userList: [{id: 'hoho', email: 'haha' }]})
+        listPostsAndComments(userId, function(postsWithComments) {
+          riot.mount('userPostsAndComments', {userId: userId, postsWithComments: postsWithComments});
+        });
       }
     </script>
   </body>

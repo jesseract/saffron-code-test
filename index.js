@@ -2,6 +2,7 @@ var root = 'http://jsonplaceholder.typicode.com';
 
 function makeApiRequest(path, handleSuccess, handleFailure) {
   $.ajax({
+      dataType: "jsonp",
       url: root + path,
       method: 'GET'
     }).done(handleSuccess)
@@ -15,7 +16,8 @@ function listUsers(onSuccess) {
 }
 
 function listPosts(userId, onSuccess) {
-  makeApiRequest('/posts?userId=' + userId, onSuccess, function() {
+  var postsPath = '/posts?userId=' + userId;
+  makeApiRequest(postsPath, onSuccess, function() {
     console.error('WTF');
   })
 }
